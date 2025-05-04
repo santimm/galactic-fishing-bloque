@@ -1,4 +1,7 @@
-<script setup></script>
+<script setup>
+import LeaderboardList from './components/leaderboardList.vue'
+import MarketList from './components/marketList.vue'
+</script>
 
 <template>
   <h1>app - cleanup</h1>
