@@ -13,6 +13,7 @@
 </template>
 
 <script setup>
+import { fetchWithCache } from '@/services/apiCache'
 import { ref, onMounted } from 'vue'
 
 const players = ref([])
@@ -20,9 +21,8 @@ const urlLeaderboard = 'https://api-game.bloque.app/game/leaderboard'
 
 onMounted(async () => {
   try {
-    const response = await fetch(urlLeaderboard)
-    const data = await response.json()
-    players.value = data.players
+    const data = await fetchWithCache(urlLeaderboard, 'leaderboardCache')
+    players.value = data?.players || []
   } catch (error) {
     console.error('1: Error fetching leaderboard data:', error)
   }
