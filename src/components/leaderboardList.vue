@@ -41,8 +41,9 @@ onMounted(async () => {
 .leaderboard {
   padding: 0 16px;
   &__title {
+    font-weight: 500;
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
   &__list {
     position: relative;

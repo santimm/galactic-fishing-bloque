@@ -4,7 +4,7 @@ import MarketList from './components/marketList.vue'
 </script>
 
 <template>
-  <h1>app - cleanup</h1>
+  <h1>GALACTIC FISHING GAME</h1>
   <LeaderboardList />
   <marketList />
 </template>
