@@ -7,6 +7,7 @@ import { visualizer } from 'rollup-plugin-visualizer'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/galactic-fishing-bloque/',
   plugins: [
     vue(),
     vueDevTools(),
