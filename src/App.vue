@@ -5,7 +5,6 @@ import MarketList from './components/marketList.vue'
 
 <template>
   <h1>app - cleanup</h1>
-  <img src="/favicon.ico" alt="" />
   <LeaderboardList />
   <marketList />
 </template>
