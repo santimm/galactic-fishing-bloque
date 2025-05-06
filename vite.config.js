@@ -5,9 +5,12 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import { VitePWA } from 'vite-plugin-pwa'
 import { visualizer } from 'rollup-plugin-visualizer'
 
+// Subdirectory for production deployment
+const subdirectory = '/galactic-fishing-bloque/'
+
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/galactic-fishing-bloque/' : '/',
+  base: mode === 'production' ? subdirectory : '/',
   plugins: [
     vue(),
     vueDevTools(),
@@ -16,7 +19,7 @@ export default defineConfig(({ mode }) => ({
       manifest: {
         name: 'Galactic Fishing App - Bloque',
         short_name: 'GalacticFishingApp',
-        start_url: '/galactic-fishing-bloque/',
+        start_url: mode === 'production' ? subdirectory : '/',
         display: 'standalone',
         background_color: '#ffffff',
         theme_color: '#333333'
@@ -52,7 +55,14 @@ export default defineConfig(({ mode }) => ({
             }
           }
         ]
-      }
+      },
+      devOptions: {
+        enabled: true,
+        type: 'module'
+      },
+      injectRegister: 'auto',
+      scope: mode === 'production' ? subdirectory : '/',
+      swDest: 'sw.js'
     }),
     visualizer({ open: true })
   ],

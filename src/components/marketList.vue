@@ -11,7 +11,7 @@
         <h3 class="market__list-card--name">{{ item.name }}</h3>
         <img
           class="market__list-card--picture"
-          :src="`/images/market/${item.type}.png`"
+          :src="resolveBasePath(`images/market/${item.type}.png`)"
           :alt="item.name"
         />
         <p class="market__list-card--description">{{ item.description }}</p>
@@ -22,6 +22,7 @@
 
 <script setup>
 import { fetchWithCache } from '@/services/apiCache'
+import { resolveBasePath } from '@/utils/pathHelper'
 import { ref, onMounted } from 'vue'
 
 const items = ref([])
