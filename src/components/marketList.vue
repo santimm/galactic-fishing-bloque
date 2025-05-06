@@ -18,6 +18,7 @@
         <p class="market__list-card--cost">{{ item.cost }}</p>
       </li>
     </ul>
+    <span class="text-decoration">May The 4th Be With You ✧˖°</span>
   </div>
 </template>
 
@@ -99,6 +100,13 @@ onMounted(async () => {
       box-shadow: 0 0 10px @ui-blue;
     }
   }
+}
+.text-decoration {
+  display: block;
+  font-size: 0.75rem;
+  color: @bg-emerald;
+  opacity: 0.8;
+  text-align: center;
 }
 @media screen and (min-width: @brakepoint-tablet) {
   .market {

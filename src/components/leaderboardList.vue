@@ -197,6 +197,10 @@ onMounted(async () => {
           width: 320px;
           height: 100%;
           background-image: url(/images/leaderboard/StarDestroyer-opt.png);
+          opacity: 0;
+          animation:
+            slideIn 0.5s 1s cubic-bezier(0.5, 0, 0, 1),
+            opacity 1.5s 1s linear forwards;
         }
       }
       &:nth-child(2) {
@@ -206,6 +210,10 @@ onMounted(async () => {
           width: 286px;
           height: 100%;
           background-image: url(/images/leaderboard/darthVader-fighter-opt.png);
+          opacity: 0;
+          animation:
+            slideIn 1s 1s cubic-bezier(0.5, 0, 0, 1),
+            opacity 1.5s 1s linear forwards;
         }
       }
       &:nth-child(3) {
@@ -215,6 +223,10 @@ onMounted(async () => {
           width: 180px;
           height: 100%;
           background-image: url(/images/leaderboard/imperialShuttle-opt.png);
+          opacity: 0;
+          animation:
+            slideIn 1.5s 1s cubic-bezier(0.5, 0, 0, 1),
+            opacity 1.5s 1s linear forwards;
         }
       }
     }
@@ -337,6 +349,24 @@ onMounted(async () => {
         }
       }
     }
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes slideIn {
+  0% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }
 </style>
