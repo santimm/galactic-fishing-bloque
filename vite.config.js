@@ -6,8 +6,8 @@ import { VitePWA } from 'vite-plugin-pwa'
 import { visualizer } from 'rollup-plugin-visualizer'
 
 // https://vite.dev/config/
-export default defineConfig({
-  base: '/galactic-fishing-bloque/',
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/galactic-fishing-bloque/' : '/',
   plugins: [
     vue(),
     vueDevTools(),
@@ -16,7 +16,7 @@ export default defineConfig({
       manifest: {
         name: 'Galactic Fishing App - Bloque',
         short_name: 'GalacticFishingApp',
-        start_url: '/',
+        start_url: '/galactic-fishing-bloque/',
         display: 'standalone',
         background_color: '#ffffff',
         theme_color: '#333333'
@@ -68,4 +68,4 @@ export default defineConfig({
       }
     }
   }
-})
+}))
